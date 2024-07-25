@@ -1,465 +1,88 @@
-<!Doctype html>
-<html lang='en-US'>
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-	<title>ABC Ltd.</title>
-	<meta charset='UTF-8'>
-	<meta name="format-detection" content="telephone=no">
-	<meta name='HandheldFriendly' content='true'>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta http-equiv='X-UA-Compatible' content='ie=edge'>
-	<meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=yes'>
-	<meta name='author' content='Mr. PQR'>
-	<meta name="theme-color" content="white">
-	<meta name='description' content='XYZ Store'>
-	<!--Styles-->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/fonts.css">
-	<!--Scripts-->
-	<script type="text/javascript" src="jquery.js"></script>
-	<!--Icons-->
-	<link rel='icon' href='img/tm.png' type='image/png' sizes='59x50'>
-	<link rel="apple-touch-icon" href="../img/tm.png">
-	<!--Page Title-->
-	<title>ABC Ltd.</title>
-	<!--Keywords-->
-	<meta name='keywords' content='category subclass item1 item2 service1 service2'>
-
-	<style>
-		* { margin:0; padding:0; border:0; outline:none; text-decoration:none; list-style:none; font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; box-sizing:border-box; -webkit-text-size-adjust: none; -webkit-appearance:none; border-radius:0; -webkit-border-radius:0; -webkit-text-size-adjust:none; touch-action: manipulation; font-display:block; word-spacing: normal !important; -webkit-user-select:text; } 
-		body, #section { width:100%; max-width:100%; } 
-		body { background-color:white;} 
-
-		#header { position:fixed; z-index:5; display:block; top:0; left:0; height:66pt; width:100%; max-width:100%; background-color: midnightblue; } 
-
-		#header #logo { display:inline-block; background-color:white; height:25pt; width:10%; text-align:center; border-bottom-right-radius:15pt; } 
-		#header #logo img { padding-top:3pt; height:25pt; width:23pt; } 
-		#header #bname { display:inline-block; width:75%; color:gold; font-size:120%; font-weight:700; vertical-align:top; padding-top:5pt; } 
-		#header #bname #tag { font-size:75%; color:whitesmoke; font-weight:300; color:aqua; } 
-		#header #cart { display:inline-block; width:10%; text-align:right; color:whitesmoke; vertical-align:top; padding-top:7pt; }
-		#header #address {  display:inline-block; width:100%; text-align:center; font-size:90%; color:whitesmoke; margin-left:5pt; margin-bottom:3pt; }
-		#header #search { display:inline-block; padding-left:2%; height:20pt; width:100%; }
-
-		#section { position:absolute; z-index:3; display:block; top:0; left:0; height:auto; max-height:auto; width:100%; max-width:100%; background-color: lavender; padding-top:70pt; }
-
-		#article { position:relative; display:block; top:0; left:0; height:auto; max-height:auto; width:100%; max-width:100%; background-color: whitesmoke; } 
-
-		#footer { position:relative; display:block; top:0; left:0; height:auto; max-height:auto; width:100%; max-width:100%; background:black; color:goldenrod; text-align:center; }
-
-	</style>
+    <meta charset='UTF-8'>
+    <meta name='HandheldFriendly' content='true'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=yes'>
+    <meta name='author' content='Mishran'>
+    <meta name='description' content='online vegetarian food tiffin delivery PGIMER Chandigarh'>
+    <meta name="keywords" content="online vegetarian food tiffin delivery PGIMER Chandigarh">
+    <title>Calculator</title>
 </head>
 <body>
-	<header id='header'>
-		<span id='logo'><img src='img/tm.png'/></span>
-		<span id='bname'> ABC Ltd.<span id='tag'> Grocery Store</span></span>
-		<span id='cart'><i class='fas fa-cart-plus'></i> <sup id='cartCount' style='color:yellow;'>0</sup></span>
-		<span id='address'>#1025/15, Tripuri Town, Patiala <i class='fas fa-phone'></i> 9100125148</span>
-		<input id='search' type='text' placeholder='search here...'/>
-	</header>
+    <style>
+        * { padding:0; margin:0; text-decoration:none; outline:none; list-style:none; font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; box-sizing:border-box; font-size-adjust:none; -webkit-appearance:none; appearance:none; -webkit-border-radius:0; border-radius:0; touch-action: manipulation; font-display:block; word-spacing: normal !important; -webkit-user-select:text; user-select:text; }
+        body{
+            background: WHITESMOKE; padding-top:15pt; text-align:center;
+        }
+        
+        label{font-size:14pt; display:inline; margin-right:10pt;  }
+        input{outline:none; border:0; line-height:30pt; padding-left:3pt; width:100pt; font-size:14pt; overflow:hidden; margin-bottom:5pt; }
 
-	<style>
-		.box { display:inline-block; font-size:85%; font-weight:700; height:80pt; max-height:80pt; width:250pt; max-width:300pt; line-height:19pt; margin-bottom:10pt; margin-right:10pt; }
-		.iimg { display:inline-block; height:75pt; width:40vw; max-width:100pt; vertical-align:top; float:left; margin-right:5pt;  } 
-		.iid { color:darkmagenta; display:none; }
-		.mrp { text-decoration:line-through; opacity:0.65; }
-		.qty, .iq, .dq { display:inline-block; height:17pt; width:20pt; text-align:center; color:black; border:1pt solid gray; font-size:115%; vertical-align:top; } 
-		.qty { width:85pt; } 
-		.addremove { display:inline-block; height:18pt; width:131pt; background:darkgreen; color:white; text-align:center; } 
-	</style>
+    </style>
 
-	<script>
-		var itemsdb = { "list":[
-			{"iid":105, "iimg":"img/0L.png", "brandname":"Refined Oil (Ricella) - 1L", "price":115, "mrp":125 },
-			{"iid":207, "iimg":"img/0L.png", "brandname":"Refined Oil (Fortune) - 1L", "price":105, "mrp":115 },
-			{"iid":405, "iimg":"img/0L.png", "brandname":"Refined Oil (Rasoi) - 1L", "price":90, "mrp":105 },
-		]}; 
-
-		var cartdb = { "list": []}; 
-
-		var userCache = []; 
-		
-	</script>
-
-	<style>
-		#cartList { position:fixed; z-index:6; display:none; top:44pt; left:0; height:auto; min-height:70vh; width:100%; border-top:1pt solid black; border-bottom:1pt solid black; background:whitesmoke; overflow-x:hidden; overflow-y:scroll; font-size:80%; }
-		#cartList table { display:inline-block; width:100vh; max-width:265pt; }
-		#cartList td { line-height:16pt; border-bottom:1pt solid black; border-right:1pt solid black; padding-left:1pt; } 
-		#cartList tr:nth-child(1) { font-size:90%; font-weight:700; }
-		#cartList td:nth-child(1) { width:30pt; }
-		#cartList td:nth-child(2) { width:190pt; }
-		#cartList td:nth-child(3) { width:30pt; }
-		#cartList td:nth-child(4) { width:15pt; text-align:center; background:red; color:white; }
-		#cartList td a:nth-of-type(1) { display:inline-block; background:lightgreen; color:black; width:30pt; text-align:center; margin-left:1pt; margin-right:10pt; }
-		#cartList td a:nth-of-type(2) { display:inline-block; background:lightpink; color:black; width:30pt; text-align:center; margin-right:10pt; }
-		.add1, .remove1 { font-size:125%; } 
-
-		#customerName, #customerAddress, #customerWA { display:inline-block; height:20pt; width:250pt; margin-left:5pt; padding-left:3pt; border:1pt solid lightgray; } 
-	</style>
-
-	<div id='cartList'></div>
-
-	<section id='section'>
-		<article id='article'></article>
-
-		<footer id='footer'>
-			<span style='display:block; width:100%; text-align:center; max-width:100%; height:auto; background:black; padding-top:5pt; color:gold; border-bottom:1pt groove gold; '><br>Our Location<br><br><img src='img/map.png' height='450pt' width='350pt'/><br><br></span><br>
-			<span style='font-size:90%;'>&copy; 2020 ABC Ltd. All rights reserved.</span><br><br>
-			<em style='display:inline-block; color:lavender; font-size:80%;'>Designed By Vertex-InfoBase<br>
-				<i class='fas fa-phone'></i> <span style='display:inline-block; margin-top:5pt;'>0091-73 551 84 136</span>
-			</em><br><br>
-			
-		</footer>
-	</section>
-	<script>
-		function updateTotalAmount() {
-			if( $('.amount').length > 0 ){
-				var totalAmount = 0; 
-				for (var t = 0; t < $('.amount').length; t++ ) {
-					totalAmount += parseInt($('.amount')[t].innerText); 
-				}
-				$('#totalAmount').text( "Total Amount (Rs.): " + totalAmount + ".00" );
-			}
-		}
-
-		function reloadFun(){
-			$('#menuList').hide(); 
-			$('#menu').on('click', function(){
-				$('#menuList').toggle(300); 
-			}); 
-
-			$('.iq').on('click', function(e){
-				var currentNo = parseInt($(this).closest('.box').find('.qty').val()); 
-				$(this).closest('.box').find('.qty').val( currentNo+1 ); 
-				$(this).closest('.box').find('.qty').css('background-color', 'yellow');
-
-				var rtgt = $(this).closest('.box').find('.iid').text(); 
-				rtgt = parseInt(rtgt.substring(rtgt.indexOf(":")+1, rtgt.length));
-				for( var y = 0; y < cartdb.list.length; y++ ){
-					if( parseInt(cartdb.list[y].iid) == rtgt ){
-						cartdb.list[y].qty = parseInt($(this).closest('.box').find('.qty').val());
-					}
-				}
-				updateTotalAmount(); 
-			}); 
-			$('.dq').on('click', function(e){
-				var currentNo = parseInt($(this).closest('.box').find('.qty').val()); 
-				if(currentNo > 0){
-					$(this).closest('.box').find('.qty').val( currentNo-1 ); 
-				}
-				if ( currentNo == 1 ) {
-					$(this).closest('.box').find('.qty').css('backgroundColor', 'transparent'); 
-					for ( var j = 0; j < cartdb.list.length; j++ ) {
-						var idSelected4 = $(this).closest('.box').find('.iid').text(); 
-						idSelected4 = parseInt(idSelected4.substring(idSelected4.indexOf(":")+1, idSelected4.length));
-						if ( parseInt(cartdb.list[j].iid) == idSelected4 ) {
-							delete cartdb.list.splice( j, 1 ); 
-							$(this).closest('.box').find('.addremove').css('background','darkgreen');
-							$(this).closest('.box').find('.addremove').text('Add to Cart'); 
-							$('#cartCount').text( cartdb.list.length );
-						}
-					}
-				}
-
-				var wsder = $(this).closest('.box').find('.iid').text(); 
-				wsder = parseInt(wsder.substring(wsder.indexOf(":")+1, wsder.length));
-				for( var y = 0; y < cartdb.list.length; y++ ){
-					if( parseInt(cartdb.list[y].iid) == wsder ){
-						cartdb.list[y].qty = parseInt($(this).closest('.box').find('.qty').val());
-					}
-				}
-				updateTotalAmount(); 
-				if( $('.amount').length == 0 ) { $('#totalAmount').text('') }; 
-			}); 
-		}
-
-		function loadAll(){
-			$('#article').html('');
-			for (i = 0; i < itemsdb.list.length; i++) {
-				var qtyVal = 0;
-				var toCart = 'Add to Cart'; 
-				var qtyColor = 'whitesmoke';
-				var addremoveColor = 'darkgreen';
-
-				for( var y = 0; y < cartdb.list.length; y++ ){
-					if( parseInt(cartdb.list[y].iid) == itemsdb.list[i].iid ){
-						qtyVal = cartdb.list[y].qty;
-						toCart = "Remove from Cart"; 
-						qtyColor = 'yellow';
-						addremoveColor = 'orangered';
-					}
-				}
-
-				$('#article').append(`
-					<div class='box'>
-						<span class='iid'>Id:` + itemsdb.list[i].iid + `</span>
-						<img class='iimg' src='` + itemsdb.list[i].iimg + `'/>
-						<span class='brandname'>` + itemsdb.list[i].brandname + `</span><br>
-						<span>Price: <em class='mrp'>` + itemsdb.list[i].mrp + `</em> <em class='price'>` + itemsdb.list[i].price + `</em></span><br>
-						<input class='qty' value='${qtyVal}' disabled style='background:${qtyColor}'/>
-						<a class='iq' href='javaScript:void(0)'>+</a>
-						<a class='dq' href='javaScript:void(0)'>-</a><br>
-						<a class='addremove' href='javaScript:void(0)' style='background:${addremoveColor}'>${toCart}</a>
-					</div>
-				`);
-			}
-			reloadFun(); 
-
-			$('#cart').on('click', function(e){
-				e.stopImmediatePropagation();
-				e.stopPropagation();
-				$('#cartList').html(`<h3 style='background:black; color:gold; text-align:center; padding-top:3pt; height:20pt;'>My Cart</h3><br>
-				<h3 id='totalAmount' style='color:darkslategray;margin-left:5pt;margin-bottom:3pt;'></h3>
-				&nbsp;&nbsp;<b>Full Name</b><br><input id='customerName' type='text' placeholder='Full Name (e.g. Vijay Kumar)'/><br><br>
-				&nbsp;&nbsp;<b>Full Address</b><br><input id='customerAddress' type='text' placeholder='Full Address (e.g. #1254, St.150, Rattan Nagar, PTA)'/><br><br>
-				&nbsp;&nbsp;<b>WhatsApp No.</b><input id='customerWA' type='number' placeholder='10-Digit WhatsApp No. (e.g. xxxxxxxxxx)'/><br><br>
-				<button id='checkOut' style='display:none;height:20pt;width:70pt;text-align:center; background:crimson; color:white; margin-left:5pt; font-weight:700;'>Checkout</button><br><br>
-				<h3 style='text-align:center; color:midnightblue; margin-bottom:3pt;'>Order Details</h3>
-				<table><div id='tableRows'></div></table><br>
-				<a id='goNow' href='' style='display:none;'></a>
-				`);
-
-				if( userCache.length > 0 ){
-					$('#customerName').val( userCache[0] ); 
-					$('#customerAddress').val( userCache[1] ); 
-					$('#customerWA').val( userCache[2] ); 
-				}
-
-				$('#customerName, #customerAddress, #customerWA').on('keyup', function(e){
-					e.stopImmediatePropagation();
-					e.stopPropagation();
-					var treaty = 0; 
-					if ( $('#customerName').val().length >= 4 ) { treaty++; }
-					if ( $('#customerAddress').val().length >= 8 ) { treaty++; }
-					if ( $('#customerWA').val().length == 10 ) { treaty++; }
-					if( treaty == 3 ){
-						$('#checkOut').show(500); 
-					} else {
-						$('#checkOut').hide(500); 
-					}
+    <h2 style="text-align:center;">Calculator</h2>
+    <em id="msg" style="color:red;">.</em><br><br>
+    <div id="content">
+        <input type="number" placeholder="Quantity" required id="qty" />
+        &nbsp;&nbsp;&nbsp;&nbsp;AND&nbsp;&nbsp;&nbsp;&nbsp; 
+        <input type="number" placeholder="Rate" required id="rate"/>
+        <br>
+        <input type="number" placeholder="Weight" id="wt"/>
+        &nbsp;&nbsp;&nbsp;&nbsp; OR &nbsp;&nbsp;&nbsp;&nbsp; 
+        <input type="number" placeholder="Rupees" id="rs"/>
+        <br>
+        <input type="text" id="qtyOut" disabled style="background:greenyellow"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="rsOut" disabled style="background:springgreen"/><br>
+        
+        <input id='reset' type="submit" value="RESET" style="background:orangered; color:white; font-weight:900;">
+        <input id='calculator' type="submit" value="CALCULATE" style="background:
+        slateblue; color:white; font-weight:900;">
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                document.getElementById("reset").addEventListener("click", function(){
+                    document.getElementById("qty").value = ''; 
+                    document.getElementById("rate").value = ''; 
+                    document.getElementById("wt").value = ''; 
+                    document.getElementById("rs").value = ''; 
+                    document.getElementById("qtyOut").value = ''; 
+                    document.getElementById("rsOut").value = ''; 
+                }); 
 
 
-					$('#checkOut').on('click', function(){
-						var userName = $('#customerName').val(); 
-						userCache[0] = userName; 
-						var userAddress = $('#customerAddress').val(); 
-						userCache[1] = userAddress; 
-						var mobileNo = parseInt( '91' + $('#customerWA').val() ); 
-						userCache[2] = mobileNo; 
-						var userAmount = $('#totalAmount').text(); 
-						var itemsData = ''; 
-						for (var g = 0; g < $('.amount').length; g++ ) {
-							itemsData += $('.itemId')[g].innerText + "-" + $('.nos')[g].innerText + "|"; 
-						}
+                document.getElementById("calculator").addEventListener("click", function(){
+                    document.getElementById("msg").innerText = "."; 
+                    let qtyLen = document.getElementById("qty").value.length; 
+                    let rateLen = document.getElementById("rate").value.length; 
+                    let wtLen = document.getElementById("wt").value.length; 
+                    let rsLen = document.getElementById("rs").value.length; 
 
-						var orderData = `
-							Name:${userName};Address:${userAddress};Mobile:${mobileNo};Amount:${userAmount};
-							Items:${itemsData}
-						`;
-						orderData = encodeURIComponent(orderData);
-						var orderLink = "https://api.whatsapp.com/send?phone=" + mobileNo + "&text=" + orderData + "&source=&data=&app_absent=";
-						//location.assign(orderLink,'_blank');
-						window.open(orderLink, '_blank');
-					}); 
-				});
-				
-				for ( var t = 0; t < cartdb.list.length; t++ ) {
-					if( t == 0 ){
-						$('#tableRows').html(`<tr><td>ID</td><td>ITEM</td><td>AMT</td><td style='background:whitesmoke; color:black;'>DEL</td></tr>`);
-					}
-					$('#tableRows').append(`
-					<tr>
-						<td class='itemId'>${cartdb.list[t].iid}</td>
-						<td class='itemName'>${cartdb.list[t].brandname}<br>
-							<a class='add1'>+</a>
-							<a class='remove1'>-</a>
-							<b class='nos'>${cartdb.list[t].qty}</b>*<b class='rate'>${cartdb.list[t].price}</b>
-						</td>
-						<td class='amount'>${parseInt(cartdb.list[t].qty) * parseInt(cartdb.list[t].price)}</td>
-						<td class='deleteItem' style='vertical-align:middle; font-weight:700;'>X</td>
-					</tr>
-					`); 
-				}
+                    let qty = document.getElementById("qty").value; 
+                    let rate = document.getElementById("rate").value; 
+                    let wt = document.getElementById("wt").value; 
+                    let rs = document.getElementById("rs").value; 
 
-				$('.add1').on('click', function(e){
-					var oldNo = parseInt($(this).closest('tr').find('.nos').text());
-					for( var y = 0; y < cartdb.list.length; y++ ){
-						if( parseInt(cartdb.list[y].iid) == parseInt($(this).closest('tr').find('.itemId').text()) ){
-							cartdb.list[y].qty = oldNo+1; 
-						}
-					}
-					$(this).closest('tr').find('.nos').text(oldNo+1); 
-					var itemPrice = parseInt($(this).closest('tr').find('.rate').text());
-					$(this).closest('tr').find('.amount').text( (oldNo+1) * itemPrice ); 
-					$('#search').val( $('#search').val() );
-					$('#search').keyup();
-					$('#cartCount').text( cartdb.list.length );
-					updateTotalAmount(); 
-				});
-				$('.remove1').on('click', function(e){
-					var oldNo = parseInt($(this).closest('tr').find('.nos').text());
-					for( var y = 0; y < cartdb.list.length; y++ ){
-						if( parseInt(cartdb.list[y].iid) == parseInt($(this).closest('tr').find('.itemId').text()) ){
-							cartdb.list[y].qty = oldNo-1; 
-						}
-					}
-					if( oldNo >= 2){
-						$(this).closest('tr').find('.nos').text(oldNo-1); 
-						var itemPrice = parseInt($(this).closest('tr').find('.rate').text());
-						$(this).closest('tr').find('.amount').text( (oldNo-1) * itemPrice ); 
-					} else if ( oldNo == 1 ) {
-						$(this).closest('tr').remove();
-						for ( var j = 0; j < cartdb.list.length; j++ ) {
-							if ( parseInt(cartdb.list[j].iid) == parseInt($(this).closest('tr').find('.itemId').text()) ) {
-								delete cartdb.list.splice( j, 1 ); 
-							}
-						}
-					}
-					$('#search').val( $('#search').val() );
-					$('#search').keyup();
-					$('#cartCount').text( cartdb.list.length );
-					updateTotalAmount(); 
-					if( $('.amount').length == 0 ) { $('#totalAmount').text('') }; 
-				});
-				$('.deleteItem').on('click', function(e){
-					$(this).closest('tr').remove();
-					for ( var j = 0; j < cartdb.list.length; j++ ) {
-						if ( parseInt(cartdb.list[j].iid) == parseInt($(this).closest('tr').find('.itemId').text()) ) {
-							delete cartdb.list.splice( j, 1 ); 
-						}
-					}
-					$('#search').val( $('#search').val() );
-					$('#search').keyup();
-					$('#cartCount').text( cartdb.list.length );
-					updateTotalAmount(); 
-					if( $('.amount').length == 0 ) { $('#totalAmount').text('') }; 
-				});
-				$('#cartCount').text( cartdb.list.length );
-				updateTotalAmount(); 
-				$('#cartList').toggle(500); 
-			});
-			$('#logo, #bname, #address, #search, #section, #footer').on('click', function(e){
-				e.stopImmediatePropagation();
-				e.stopPropagation();
-				$('#cartList').hide(500); 
-			});
-
-			$('.addremove').on('click', function(e){
-				if ( $(this).text().indexOf('Add') == 0 ) {
-					//Do something when "Add to Cart" is clicked
-					var idSelected3 = $(this).closest('.box').find('.iid').text(); 
-					idSelected3 = parseInt(idSelected3.substring(idSelected3.indexOf(":")+1, idSelected3.length));
-					var nameSelected = $(this).closest('.box').find('.brandname').text(); 
-					var qtySelected = parseInt($(this).closest('.box').find('.qty').val()); 
-					var priceSelected = parseInt($(this).closest('.box').find('.price').text()); 
-					if (qtySelected > 0) {
-						//alert( JSON.stringify(cartdb.list) ); 
-						//{"iid":105, "brandname":"Refined Oil (Ricella) - 1L", "qty":2, "price":115 },
-						cartdb.list[cartdb.list.length] = { 'iid':idSelected3, 'brandname':nameSelected, 'qty':qtySelected, 'price':priceSelected  }; 
-						//alert( JSON.stringify(cartdb.list) ); 
-						$(this).closest('.box').find('.addremove').css('background','orangered');
-						$(this).closest('.box').find('.addremove').text('Remove from Cart');
-					} else {
-						alert("Please add a valid quantity."); 
-					}
-				} else {
-					//Do something when "Remove from Cart" is clicked
-					$(this).closest('.box').find('.qty').val(0); 
-					$(this).closest('.box').find('.qty').css('background','whitesmoke');
-					$(this).closest('.box').find('.addremove').css('background','darkgreen');
-					$(this).closest('.box').find('.addremove').text('Add to Cart');
-					for ( var j = 0; j < cartdb.list.length; j++ ) {
-						var idSelected = $(this).closest('.box').find('.iid').text(); 
-						idSelected = parseInt(idSelected.substring(idSelected.indexOf(":")+1, idSelected.length));
-						if ( parseInt(cartdb.list[j].iid) == idSelected ) {
-							delete cartdb.list.splice( j, 1 ); 
-						}
-					}
-				}
-				$('#cartCount').text( cartdb.list.length );
-				updateTotalAmount(); 
-				if( $('.amount').length == 0 ) { $('#totalAmount').text('') }; 
-			});
-		}
-		loadAll();
-
-		$('#search').on('keyup', function(e){
-			var searchedString = $(this).val(); 
-			if( searchedString.length >= 3 ) {
-				$('#article').html('');
-				for (i = 0; i < itemsdb.list.length; i++) {
-					if( itemsdb.list[i].brandname.toLowerCase().indexOf(searchedString.toLowerCase()) >= 0 ){
-						var qtyVal2 = 0;
-						var toCart2 = 'Add to Cart'; 
-						var qtyColor2 = 'whitesmoke';
-						var addremoveColor2 = 'darkgreen';
-
-						for( var y = 0; y < cartdb.list.length; y++ ){
-							if( parseInt(cartdb.list[y].iid) == itemsdb.list[i].iid ){
-								qtyVal2 = cartdb.list[y].qty;
-								toCart2 = "Remove from Cart"; 
-								qtyColor2 = 'yellow';
-								addremoveColor2 = 'orangered';
-							}
-						}
-
-						$('#article').append(`
-							<div class='box'>
-								<span class='iid'>Id:` + itemsdb.list[i].iid + `</span>
-								<img class='iimg' src='` + itemsdb.list[i].iimg + `'/>
-								<span class='brandname'>` + itemsdb.list[i].brandname + `</span><br>
-								<span>Price: <em class='mrp'>` + itemsdb.list[i].mrp + `</em> <em class='price'>` + itemsdb.list[i].price + `</em></span><br>
-								<input class='qty' value='${qtyVal2}' disabled style='background:${qtyColor2}'/>
-								<a class='iq' href='javaScript:void(0)'>+</a>
-								<a class='dq' href='javaScript:void(0)'>-</a><br>
-								<a class='addremove' href='javaScript:void(0)' style='background:${addremoveColor2}'>${toCart2}</a>
-							</div>
-						`); 
-						reloadFun();
-
-						$('.addremove').on('click', function(e){
-							if ( $(this).text().indexOf('Add') == 0 ) {
-								//Do something when "Add to Cart" is clicked
-								var idSelected3 = $(this).closest('.box').find('.iid').text(); 
-								idSelected3 = parseInt(idSelected3.substring(idSelected3.indexOf(":")+1, idSelected3.length));
-								var nameSelected = $(this).closest('.box').find('.brandname').text(); 
-								var qtySelected = parseInt($(this).closest('.box').find('.qty').val()); 
-								var priceSelected = parseInt($(this).closest('.box').find('.price').text()); 
-								if (qtySelected > 0) {
-									//alert( JSON.stringify(cartdb.list) ); 
-									//{"iid":105, "brandname":"Refined Oil (Ricella) - 1L", "qty":2, "price":115 },
-									cartdb.list[cartdb.list.length] = { 'iid':idSelected3, 'brandname':nameSelected, 'qty':qtySelected, 'price':priceSelected  }; 
-									//alert( JSON.stringify(cartdb.list) ); 
-									$(this).closest('.box').find('.addremove').css('background','orangered');
-									$(this).closest('.box').find('.addremove').text('Remove from Cart');
-								} else {
-									alert("Please add a valid quantity."); 
-								}
-							} else {
-								//Do something when "Remove from Cart" is clicked
-								$(this).closest('.box').find('.qty').val(0); 
-								$(this).closest('.box').find('.qty').css('background','whitesmoke');
-								$(this).closest('.box').find('.addremove').css('background','darkgreen');
-								$(this).closest('.box').find('.addremove').text('Add to Cart');
-								for ( var j = 0; j < cartdb.list.length; j++ ) {
-									var idSelected = $(this).closest('.box').find('.iid').text(); 
-									idSelected = parseInt(idSelected.substring(idSelected.indexOf(":")+1, idSelected.length));
-									if ( parseInt(cartdb.list[j].iid) == idSelected ) {
-										delete cartdb.list.splice( j, 1 ); 
-									}
-								}
-							}
-							$('#cartCount').text( cartdb.list.length );
-							updateTotalAmount(); 
-							if( $('.amount').length == 0 ) { $('#totalAmount').text('') }; 
-						});
-					}
-				}
-			} else if ( searchedString.length == 0 ) {
-				loadAll();
-			} else {
-				//do nothing
-			}
-			$('html, body').animate({ scrollTop:0 }, 'fast');
-		}); 
-	</script>
+                    if( qtyLen > 0 && rateLen > 0 && (wtLen > 0 || rsLen > 0) ){
+                        //alert(100); 
+                        if(wtLen > 0){
+                            let res = (rate/qty)*wt; 
+                            res = Math.round(res * 100)/100; 
+                           // alert(res);
+                            document.getElementById("rsOut").value = "Rs." + res; 
+                        }else{
+                            //alert(102); 
+                            let res = (qty/rate)*rs; 
+                            res = Math.round(res * 100)/100; 
+                            document.getElementById("qtyOut").value = res + "g"; 
+                        }
+                    }else{
+                        document.getElementById("msg").innerText = "Not Filled"; 
+                    }
+                })
+            }, false);
+        </script>
+    </div>
 </body>
 </html>
