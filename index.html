@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" manifest="main.appcache">
 <head>
     <meta charset='UTF-8'>
     <meta name='HandheldFriendly' content='true'>
@@ -8,6 +8,7 @@
     <meta name='author' content='Mishran'>
     <meta name='description' content='online vegetarian food tiffin delivery PGIMER Chandigarh'>
     <meta name="keywords" content="online vegetarian food tiffin delivery PGIMER Chandigarh">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
     <title>Calculator</title>
 </head>
 <body>
@@ -68,13 +69,13 @@
                         if(wtLen > 0){
                             let res = (rate/qty)*wt; 
                             res = Math.round(res * 100)/100; 
-                            document.getElementById("wt").value = ''; 
+                            document.getElementById("rs").value = ''; 
                             document.getElementById("qtyOut").value = ''; 
                             document.getElementById("rsOut").value = "Rs." + res; 
                         }else{
                             let res = (qty/rate)*rs; 
                             res = Math.round(res * 100)/100; 
-                            document.getElementById("rs").value = ''; 
+                            document.getElementById("wt").value = ''; 
                             document.getElementById("rsOut").value = ''; 
                             document.getElementById("qtyOut").value = res + "g"; 
                         }
