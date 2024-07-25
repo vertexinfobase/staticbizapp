@@ -65,16 +65,17 @@
                     let rs = document.getElementById("rs").value; 
 
                     if( qtyLen > 0 && rateLen > 0 && (wtLen > 0 || rsLen > 0) ){
-                        //alert(100); 
                         if(wtLen > 0){
                             let res = (rate/qty)*wt; 
                             res = Math.round(res * 100)/100; 
-                           // alert(res);
+                            document.getElementById("wt").value = ''; 
+                            document.getElementById("qtyOut").value = ''; 
                             document.getElementById("rsOut").value = "Rs." + res; 
                         }else{
-                            //alert(102); 
                             let res = (qty/rate)*rs; 
                             res = Math.round(res * 100)/100; 
+                            document.getElementById("rs").value = ''; 
+                            document.getElementById("rsOut").value = ''; 
                             document.getElementById("qtyOut").value = res + "g"; 
                         }
                     }else{
