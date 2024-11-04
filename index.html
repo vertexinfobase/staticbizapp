@@ -23,7 +23,7 @@
 
     </style>
 
-    <h2 style="text-align:center;">Calculator</h2>
+    <h2 style="text-align:center;">Sabzi Calculator</h2>
     <em id="msg" style="color:red;">.</em><br><br>
     <div id="content">
         <input type="number" placeholder="Quantity" required id="qty" />
@@ -41,8 +41,57 @@
         <input id='reset' type="submit" value="RESET" style="background:orangered; color:white; font-weight:900;">
         <input id='calculator' type="submit" value="CALCULATE" style="background:
         slateblue; color:white; font-weight:900;">
+
+        <style>
+            #dadiJiCalc input {display:inline-block; font-size:15pt; width:175pt; }
+            #resetIt, #getTotal{ height:30pt; width:100pt; font-size:14pt; font-weight:900;}
+            #resetIt{background:orangered; color:white;  }
+            #getTotal{background:midnightblue; color:white; }
+        </style>
+
+        <div id="dadiJiCalc" style="margin-top:20pt; height:100pt; width:100%;">
+            <span id="errMsg" style="color:deeppink; font-size:15pt; ">ਪੀਲੇ ਖਾਨੇ ਭਰੋ ਅਤੇ <b>ਪਤਾ ਕਰੋ</b> ਨੂੰ ਦੱਬੋ</span>
+            <h4>ਉੱਨ ਅਤੇ ਬਣਵਾਈ ਕੈਲਕੁਲੇਟਰ</h4><br>
+            <input id="a" type="text" required placeholder="100g ਉੱਨ ਦੀ ਕੀਮਤ?" style="background:yellow;"/>
+            <input id="b" type="text" required placeholder="100g ਉੱਨ ਦੀ ਬਣਵਾਈ?"  style="background:yellow;"/>
+            <input id="c" type="text" required placeholder="ਕਿੰਨੀ ਉੱਨ ਲੱਗੀ?"  style="background:yellow;"/>
+            <br>
+            <input id="d" type="text" disabled placeholder="ਉੱਨ ਦੀ ਕੁੱਲ ਕੀਮਤ" style="background:springgreen;"/>
+            <input id="e" type="text" disabled placeholder="ਕੁੱਲ ਬਣਵਾਈ" style="background:springgreen;"/>
+            <input id="f" type="text" disabled placeholder="ਕੁੱਲ ਜੋੜ" style="background:springgreen;"/><br>
+            
+            <button id="resetIt">ਮਿਟਾਓ</button>
+            <button id="getTotal">ਪਤਾ ਕਰੋ</button>
+        </div>
+
         <script>
             document.addEventListener('DOMContentLoaded', function(){
+                //-----------Wool Calc-------------//
+                document.getElementById("resetIt").addEventListener("click", function(){
+                    document.getElementById("a").value = ''; 
+                    document.getElementById("b").value = ''; 
+                    document.getElementById("c").value = ''; 
+                    document.getElementById("d").value = ''; 
+                    document.getElementById("e").value = ''; 
+                    document.getElementById("f").value = ''; 
+                }); 
+
+                document.getElementById("getTotal").addEventListener("click", function(){
+                    if( (document.getElementById("a").value.length + document.getElementById("b").value.length + document.getElementById("c").value.length) >= 5 ){
+                        let a = document.getElementById("a").value; 
+                        let b = document.getElementById("b").value; 
+                        let c = document.getElementById("c").value; 
+                        document.getElementById("d").value = (a*10*c)/1000; 
+                        document.getElementById("e").value = (b*10*c)/1000; 
+                        document.getElementById("f").value = parseInt(document.getElementById("d").value) + parseInt(document.getElementById("e").value);
+                    }else{
+                        document.getElementById("errMsg").innerText = "Please fill"; 
+                    }
+                });
+
+
+
+
                 document.getElementById("reset").addEventListener("click", function(){
                     document.getElementById("qty").value = ''; 
                     document.getElementById("rate").value = ''; 
